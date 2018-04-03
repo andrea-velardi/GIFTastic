@@ -1,0 +1,83 @@
+
+body{
+	background: url('../images/comic.jpg');
+	background-size: cover;
+
+}
+
+h1{
+	font-family: arial; 
+	color: black; 
+	background-color: whitesmoke; 
+	font-size: 90px;
+	margin-top: 3vh;
+	margin-bottom: 1vh;
+	border: 6px dotted black;
+}
+
+.row{
+	margin-bottom: 4vh;
+	margin-left: 3vw;
+	margin-right: 3vw;
+}
+
+.btn{
+	font-family: arial;
+	font-size: 16px;
+	background-color: black;
+	color: white;
+	padding: 1vh 1vw;
+}
+
+.btn:hover{
+	color: #bae;
+}
+
+.btn:focus{
+	outline: 2px solid #bae !important;
+	background-color: black;
+	color: #bae;
+}
+
+.comic-button{
+	margin: .5vh 1vw;
+}
+
+.dotted-border{
+	border: 6px dotted black;
+	background-color: whitesmoke; 
+}
+
+.comic-sans-font{
+	font-family: "Comic Sans MS";
+	font-size: 18px;
+	font-weight: 800;
+	color: black;
+}
+
+.gif-image{
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+}
+
+.individual-gif-container{
+	float: left;
+	margin: 2vh 3vw 2vh 3vw;
+}
+
+#submit{
+	margin-top: 1.5vh;
+}
+
+#comic{
+	margin-top: 1.5vh;
+	width: 100%;
+}
+
+#comic:focus{
+	outline: 2px solid #bae !important;
+}
+
+#gif-container{
+	font-size: 22px;
+}
