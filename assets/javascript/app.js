@@ -15,30 +15,30 @@ function renderButtons(){ //loops through my topics and creates a button for eac
 		$("#button-container").append(newButton);// appends the newButton data into the #button-container on the DOM
 		console.log('this works'); 
 	}
-	$(".comic-button").unbind("click");// removes all handlers attached to the elements
+	$(".comic-button").unbind("click");// removes all handlers attached to the elements 
 
 	$(".comic-button").on("click", function(){ //when a button is clicked on, it will run this function
 		$(".gif-image").unbind("click");
 		$("#gif-container").empty();
-		populateGIFContainer($(this).text());//calling the populateGIFContainer function and passing this.text through 
+		populateGIFContainer($(this).text());//calling the populateGIFContainer function and passing this.text through the images
 	});
 
 }
 
 function addButton(comic){ //adding buttons from topics in array
-	if(topics.indexOf(comic) === -1) {
+	if(topics.indexOf(comic) === -1) {// meaning that the topic is not already in my array
 		topics.push(comic);//push the topic button onto the DOM
 		$("#button-container").empty();
 		renderButtons(); //calling the renderButtons Function above
 	}
 }
 
-function populateGIFContainer(comic){
+function populateGIFContainer(comic){// this is making the api call
 	$.ajax({
 		url: "https://api.giphy.com/v1/gifs/search?q=" + comic + 
 		"&api_key=ifiRI75D1HQ1iJGEsjd0oR8todb4VZlu&rating=" + cutOffRating + "&limit=" + numberOfGIFs,
 		method: "GET" //using the GET method to fetch the data from the API
-	}).then(function(response){
+	}).then(function(response){//once you get the results it will do what is in this function 
 		response.data.forEach(function(element){
 			newDiv = $("<div>");//add new div element
 			newDiv.addClass("individual-gif-container");
@@ -68,10 +68,10 @@ function populateGIFContainer(comic){
 }
 
 $(document).ready(function(){// DOM is ready
-	renderButtons();
+	renderButtons();//calling the rederButtons - which is generating the buttons
 	$("#submit").on("click", function(){//when submit is clicked, it runs this function
-		event.preventDefault();//preventative 
-		addButton($("#comic").val().trim());// add the button and remove white space
+		event.preventDefault();//built in javascript function
+		addButton($("#comic").val().trim());// passing the value of what the user inputs in the box and passes it to the addButton function and removes white spaces
 		$("#comic").val("");//the button will have the value of the string
 	});
 });
